@@ -1,9 +1,10 @@
-package com.techlab.panaderia.controllers;
+package panaderia.controllers;
 
-import com.techlab.panaderia.pedidos.OrderStatus;
-import com.techlab.panaderia.pedidos.Pedido;
-import com.techlab.panaderia.servicios.OrderService;
-import com.techlab.panaderia.servicios.OrderService.OrderItemRequest;
+import lombok.Data;
+import panaderia.pedidos.OrderStatus;
+import panaderia.pedidos.Pedido;
+import panaderia.servicios.OrderService;
+import panaderia.servicios.OrderService.OrderItemRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -106,42 +107,20 @@ public class OrderController {
     /**
      * DTO for creating an order
      */
+    @Data
     public static class CreateOrderRequest {
         private Long userId;
         
         @NotEmpty(message = "El pedido debe contener al menos un producto")
         private List<OrderItemRequest> items;
-        
-        public Long getUserId() {
-            return userId;
-        }
-        
-        public void setUserId(Long userId) {
-            this.userId = userId;
-        }
-        
-        public List<OrderItemRequest> getItems() {
-            return items;
-        }
-        
-        public void setItems(List<OrderItemRequest> items) {
-            this.items = items;
-        }
     }
     
     /**
      * DTO for updating order status
      */
+    @Data
     public static class UpdateStatusRequest {
         @NotNull(message = "El estado es obligatorio")
         private OrderStatus status;
-        
-        public OrderStatus getStatus() {
-            return status;
-        }
-        
-        public void setStatus(OrderStatus status) {
-            this.status = status;
-        }
     }
 }

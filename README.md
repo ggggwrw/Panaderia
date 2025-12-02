@@ -226,7 +226,7 @@ curl -X PUT http://localhost:8080/api/orders/1/status \
 ```
 src/
 ├── main/
-│   ├── java/com/techlab/panaderia/
+│   ├── java/panaderia/
 │   │   ├── PanaderiaApplication.java    # Aplicación principal
 │   │   ├── config/                       # Configuraciones (OpenAPI)
 │   │   ├── controllers/                  # Controladores REST
@@ -239,7 +239,7 @@ src/
 │       ├── schema.sql                    # Esquema de base de datos
 │       └── data.sql                      # Datos de ejemplo
 └── test/
-    └── java/com/techlab/panaderia/
+    └── java/panaderia/
         └── servicios/                    # Tests de servicios
 ```
 
@@ -281,6 +281,7 @@ spring.jpa.hibernate.ddl-auto=update
 - MySQL Connector
 - Jakarta Validation
 - SpringDoc OpenAPI
+- Lombok
 - JUnit 5
 
 ---

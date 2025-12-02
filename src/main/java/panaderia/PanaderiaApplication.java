@@ -1,4 +1,4 @@
-package com.techlab.panaderia;
+package panaderia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

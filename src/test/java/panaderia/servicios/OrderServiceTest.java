@@ -1,13 +1,13 @@
-package com.techlab.panaderia.servicios;
+package panaderia.servicios;
 
-import com.techlab.panaderia.excepciones.BadRequestException;
-import com.techlab.panaderia.excepciones.ResourceNotFoundException;
-import com.techlab.panaderia.excepciones.StockInsuficienteException;
-import com.techlab.panaderia.pedidos.OrderStatus;
-import com.techlab.panaderia.pedidos.Pedido;
-import com.techlab.panaderia.productos.Product;
-import com.techlab.panaderia.productos.ProductRepository;
-import com.techlab.panaderia.servicios.OrderService.OrderItemRequest;
+import panaderia.excepciones.BadRequestException;
+import panaderia.excepciones.ResourceNotFoundException;
+import panaderia.excepciones.StockInsuficienteException;
+import panaderia.pedidos.OrderStatus;
+import panaderia.pedidos.Pedido;
+import panaderia.productos.Product;
+import panaderia.productos.ProductRepository;
+import panaderia.servicios.OrderService.OrderItemRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

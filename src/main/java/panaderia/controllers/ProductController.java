@@ -1,7 +1,7 @@
-package com.techlab.panaderia.controllers;
+package panaderia.controllers;
 
-import com.techlab.panaderia.productos.Product;
-import com.techlab.panaderia.servicios.ProductService;
+import panaderia.productos.Product;
+import panaderia.servicios.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
