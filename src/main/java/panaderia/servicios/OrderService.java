@@ -1,11 +1,14 @@
-package com.techlab.panaderia.servicios;
+package panaderia.servicios;
 
-import com.techlab.panaderia.excepciones.BadRequestException;
-import com.techlab.panaderia.excepciones.ResourceNotFoundException;
-import com.techlab.panaderia.excepciones.StockInsuficienteException;
-import com.techlab.panaderia.pedidos.*;
-import com.techlab.panaderia.productos.Product;
-import com.techlab.panaderia.productos.ProductRepository;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import panaderia.excepciones.BadRequestException;
+import panaderia.excepciones.ResourceNotFoundException;
+import panaderia.excepciones.StockInsuficienteException;
+import panaderia.pedidos.*;
+import panaderia.productos.Product;
+import panaderia.productos.ProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -189,32 +192,11 @@ public class OrderService {
     /**
      * DTO for order item request
      */
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class OrderItemRequest {
         private Long productId;
         private Integer cantidad;
-        
-        public OrderItemRequest() {
-        }
-        
-        public OrderItemRequest(Long productId, Integer cantidad) {
-            this.productId = productId;
-            this.cantidad = cantidad;
-        }
-        
-        public Long getProductId() {
-            return productId;
-        }
-        
-        public void setProductId(Long productId) {
-            this.productId = productId;
-        }
-        
-        public Integer getCantidad() {
-            return cantidad;
-        }
-        
-        public void setCantidad(Integer cantidad) {
-            this.cantidad = cantidad;
-        }
     }
 }

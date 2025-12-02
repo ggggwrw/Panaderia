@@ -1,8 +1,10 @@
-package com.techlab.panaderia.excepciones;
+package panaderia.excepciones;
 
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+@Getter
 @ResponseStatus(HttpStatus.CONFLICT)
 public class StockInsuficienteException extends RuntimeException {
     
@@ -26,21 +28,5 @@ public class StockInsuficienteException extends RuntimeException {
         this.productName = productName;
         this.requestedQuantity = requestedQuantity;
         this.availableStock = availableStock;
-    }
-    
-    public Long getProductId() {
-        return productId;
-    }
-    
-    public String getProductName() {
-        return productName;
-    }
-    
-    public Integer getRequestedQuantity() {
-        return requestedQuantity;
-    }
-    
-    public Integer getAvailableStock() {
-        return availableStock;
     }
 }

@@ -1,4 +1,4 @@
-package com.techlab.panaderia.pedidos;
+package panaderia.pedidos;
 
 /**
  * Enum representing the possible statuses of an order

@@ -1,4 +1,4 @@
-package com.techlab.panaderia.pedidos;
+package panaderia.pedidos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

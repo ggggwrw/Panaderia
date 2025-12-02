@@ -1,6 +1,9 @@
-package com.techlab.panaderia.pedidos;
+package panaderia.pedidos;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -8,6 +11,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
+@Data
+@NoArgsConstructor
 public class Pedido {
     
     @Id
@@ -33,8 +38,8 @@ public class Pedido {
     @Version
     private Long version;
     
-    // Default constructor
-    public Pedido() {
+    // Constructor that initializes default values
+    {
         this.fechaCreacion = LocalDateTime.now();
         this.status = OrderStatus.PENDING;
         this.total = BigDecimal.ZERO;
@@ -42,7 +47,6 @@ public class Pedido {
     
     // Constructor with userId
     public Pedido(Long userId) {
-        this();
         this.userId = userId;
     }
     
@@ -63,74 +67,5 @@ public class Pedido {
         this.total = lineas.stream()
                 .map(LineaPedido::getSubtotal)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-    }
-    
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-    
-    public void setId(Long id) {
-        this.id = id;
-    }
-    
-    public Long getUserId() {
-        return userId;
-    }
-    
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-    
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-    
-    public void setFechaCreacion(LocalDateTime fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-    
-    public BigDecimal getTotal() {
-        return total;
-    }
-    
-    public void setTotal(BigDecimal total) {
-        this.total = total;
-    }
-    
-    public OrderStatus getStatus() {
-        return status;
-    }
-    
-    public void setStatus(OrderStatus status) {
-        this.status = status;
-    }
-    
-    public List<LineaPedido> getLineas() {
-        return lineas;
-    }
-    
-    public void setLineas(List<LineaPedido> lineas) {
-        this.lineas = lineas;
-    }
-    
-    public Long getVersion() {
-        return version;
-    }
-    
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-    
-    @Override
-    public String toString() {
-        return "Pedido{" +
-                "id=" + id +
-                ", userId=" + userId +
-                ", fechaCreacion=" + fechaCreacion +
-                ", total=" + total +
-                ", status=" + status +
-                ", lineas=" + lineas.size() +
-                '}';
     }
 }

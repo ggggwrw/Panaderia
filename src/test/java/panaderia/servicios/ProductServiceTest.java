@@ -1,8 +1,8 @@
-package com.techlab.panaderia.servicios;
+package panaderia.servicios;
 
-import com.techlab.panaderia.excepciones.ResourceNotFoundException;
-import com.techlab.panaderia.productos.Product;
-import com.techlab.panaderia.productos.ProductRepository;
+import panaderia.excepciones.ResourceNotFoundException;
+import panaderia.productos.Product;
+import panaderia.productos.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
